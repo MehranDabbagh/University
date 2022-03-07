@@ -1,6 +1,6 @@
 package D.Service.Base;
 
-import D.Entities.Base.BaseEntity;
+
 
 import java.util.List;
 

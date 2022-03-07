@@ -1,7 +1,7 @@
 package D.MyConnection;
 
 import D.Entities.*;
-import D.Entities.Base.BaseEntity;
+
 import lombok.var;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -24,8 +24,6 @@ public class SessionFactorySingleton {
             // SessionFactory is thread safe.
             // SessionFactory is immutable.
             INSTANCE = new MetadataSources(registry)
-                    .addAnnotatedClass(BaseEntity.class)
-                    .addAnnotatedClass(Person.class)
                     .addAnnotatedClass(Prof.class)
                     .addAnnotatedClass(Course.class)
                     .addAnnotatedClass(Student.class)
