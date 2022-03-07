@@ -17,4 +17,18 @@ import java.util.stream.Collectors;
 
 public class CourseRepositoryImpl extends GenericRepositoryImpl<Course,Integer> {
 
+    public List<Course> findAll() {
+        Session session = sessionFactory.openSession();
+        Query q = session.createQuery("from Course ");
+        List<Course> courses = (List<Course>) q.getResultList();
+
+        return courses;
+    }
+
+
+    public Course findById(Integer id) {
+        try (var session = sessionFactory.openSession()) {
+            return session.find(Course.class, id);
+        }
+    }
 }

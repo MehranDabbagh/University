@@ -16,7 +16,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Integer create(Course course) {
-        return courseRepository.create(course);
+        return courseRepository.save(course).getId();
     }
 
     @Override
@@ -31,11 +31,11 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public void Update(Course course) {
-courseRepository.Update(course);
+courseRepository.update(course);
     }
 
     @Override
     public void Delete(Integer id) {
-courseRepository.Delete(id);
+courseRepository.deleteById(id);
     }
 }
