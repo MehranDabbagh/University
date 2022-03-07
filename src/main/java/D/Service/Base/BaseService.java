@@ -4,7 +4,7 @@ import D.Entities.Base.BaseEntity;
 
 import java.util.List;
 
-public interface BaseService <T extends BaseEntity,I>{
+public interface BaseService <T ,I>{
     I login(T t);
     I create (T t);
     T findById(I id);

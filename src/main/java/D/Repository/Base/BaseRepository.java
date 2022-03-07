@@ -10,7 +10,7 @@ import org.hibernate.SessionFactory;
 import java.sql.Connection;
 import java.util.List;
 
-public interface BaseRepository<T extends BaseEntity,I> {
+public interface BaseRepository<T,I> {
     Connection connection= PostgresConnection.getInstance().getConnection();
      SessionFactory sessionFactory = SessionFactorySingleton.getInstance();
     I create(T t);

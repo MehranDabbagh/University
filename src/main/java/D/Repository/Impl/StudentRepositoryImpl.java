@@ -4,7 +4,7 @@ import D.Entities.Course;
 import D.Entities.Prof;
 import D.Entities.Student;
 import D.Repository.StudentRepository;
-import com.sun.tools.javac.jvm.Gen;
+
 import lombok.var;
 import org.hibernate.Session;
 import org.hibernate.query.Query;

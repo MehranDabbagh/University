@@ -15,7 +15,10 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Course extends BaseEntity {
+public class Course {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
     private String name;
     @ManyToOne
     private Prof prof;
