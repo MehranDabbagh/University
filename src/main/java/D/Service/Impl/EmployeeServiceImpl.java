@@ -29,7 +29,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Integer create(Employee employee) {
-        return employeeRepository.create(employee);
+        return employeeRepository.save(employee).getId();
     }
 
     @Override
@@ -44,11 +44,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void Update(Employee employee) {
-employeeRepository.Update(employee);
+employeeRepository.update(employee);
     }
 
     @Override
     public void Delete(Integer id) {
-employeeRepository.Delete(id);
+employeeRepository.deleteById(id);
     }
 }

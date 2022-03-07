@@ -29,7 +29,7 @@ public class ProfServiceImpl implements ProfService {
 
     @Override
     public Integer create(Prof prof) {
-        return profRepository.create(prof);
+        return profRepository.save(prof).getId();
     }
 
     @Override
@@ -44,11 +44,11 @@ public class ProfServiceImpl implements ProfService {
 
     @Override
     public void Update(Prof prof) {
-profRepository.Update(prof);
+profRepository.save(prof);
     }
 
     @Override
     public void Delete(Integer id) {
-profRepository.Delete(id);
+profRepository.deleteById(id);
     }
 }

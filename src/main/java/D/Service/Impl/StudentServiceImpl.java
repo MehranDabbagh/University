@@ -31,7 +31,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Integer create(Student student) {
-        return studentRepository.create(student);
+        return studentRepository.save(student).getId();
     }
 
     @Override
@@ -46,12 +46,12 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void Update(Student student) {
-studentRepository.Update(student);
+studentRepository.update(student);
     }
 
     @Override
     public void Delete(Integer id) {
-studentRepository.Delete(id);
+studentRepository.deleteById(id);
     }
 
 
