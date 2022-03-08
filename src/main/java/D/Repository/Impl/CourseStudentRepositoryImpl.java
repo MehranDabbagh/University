@@ -13,7 +13,7 @@ public class CourseStudentRepositoryImpl extends GenericRepositoryImpl<CourseStu
     @Override
     public List<CourseStudent> findAll() {
         Session session = sessionFactory.openSession();
-        Query q = session.createQuery("from Employee ");
+        Query q = session.createQuery("from CourseStudent ");
         List<CourseStudent> courseStudents = (List<CourseStudent>) q.getResultList();
 
         return courseStudents;

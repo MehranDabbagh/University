@@ -10,6 +10,7 @@ import D.Service.CourseStudentService;
 import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class CourseStudentServiceImpl implements CourseStudentService {
@@ -35,8 +36,8 @@ public class CourseStudentServiceImpl implements CourseStudentService {
         List<CourseStudent> courseStudents = courseStudentRepository.findAll();
         for (CourseStudent coursestudent:courseStudents
              ) {
-            if(coursestudent.getCourse()==course.getId() && coursestudent.getStudent()==student.getId()){
-                coursestudent.setCourse(score);
+            if(Objects.equals(coursestudent.getCourse(), course.getId()) && Objects.equals(coursestudent.getStudent(), student.getId())){
+                coursestudent.setScore(score);
                 courseStudentRepository.update(coursestudent);
             }
         }
