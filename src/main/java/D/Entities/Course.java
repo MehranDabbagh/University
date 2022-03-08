@@ -1,6 +1,7 @@
 package D.Entities;
 
 
+import D.Entities.Base.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,10 +18,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Course {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+public class Course extends BaseEntity {
     private String name;
     @ManyToOne
     private Prof prof;

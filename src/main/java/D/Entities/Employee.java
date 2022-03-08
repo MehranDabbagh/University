@@ -13,13 +13,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
-public class Employee {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
-    private String firstname;
-    private String lastname;
-    private String username;
-    private String password;
+
+public class Employee  extends Person {
+
 }

@@ -1,5 +1,6 @@
 package D.Entities;
 
+import D.Entities.Base.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,10 +17,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CourseStudent {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+public class CourseStudent extends BaseEntity {
     private Integer course;
     private Integer student;
     private Integer score;

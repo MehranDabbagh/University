@@ -17,7 +17,13 @@
 
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
-
+        <mapping class ="D.Entities.Base.BaseEntity"/>
+        <mapping class ="D.Entities.Person"/>
+        <mapping class ="D.Entities.Prof"/>
+        <mapping class ="D.Entities.Student"/>
+        <mapping class ="D.Entities.Employee"/>
+        <mapping class ="D.Entities.CourseStudent"/>
+        <mapping class ="D.Entities.Course"/>
     </session-factory>
 
 </hibernate-configuration>
