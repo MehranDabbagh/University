@@ -1,10 +1,11 @@
 package D.Repository.Impl;
 
 import D.MyConnection.SessionFactorySingleton;
+import D.Repository.GenericRepository;
 import lombok.var;
 import org.hibernate.SessionFactory;
 
-public class GenericRepositoryImpl<T, ID> implements ir.maktab.hibernate.GenericRepository<T, ID> {
+public class GenericRepositoryImpl<T, ID> implements GenericRepository<T, ID> {
 
     protected SessionFactory sessionFactory = SessionFactorySingleton.getInstance();
 
