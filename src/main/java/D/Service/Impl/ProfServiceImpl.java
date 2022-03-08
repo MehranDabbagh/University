@@ -44,7 +44,7 @@ public class ProfServiceImpl implements ProfService {
 
     @Override
     public void Update(Prof prof) {
-profRepository.save(prof);
+profRepository.update(prof);
     }
 
     @Override

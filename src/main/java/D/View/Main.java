@@ -22,7 +22,7 @@ public class Main {
     static StudentServiceImpl studentService = new StudentServiceImpl();
 
     public static void main(String[] args) {
-        Employee employee=new Employee();
+        Employee employee = new Employee();
         employee.setUsername("admin");
         employee.setPassword("admin");
         employee.setId(null);
@@ -643,13 +643,16 @@ public class Main {
             Integer profId = input.nextInt();
             Prof prof = profService.findById(profId);
             if (prof != null) {
+                prof.setId(profId);
                 Course course = new Course();
                 course.setName(courseName);
-                course.setProf(profService.findById(profId));
+                course.setProf(prof);
                 course.setYear(yearOfCourse);
                 course.setTerm(term);
                 course.setUnit(unit);
                 int id = courseService.create(course);
+                prof.getCourseList().add(course);
+                profService.Update(prof);
                 if (id > 0) {
                     System.out.println("done!");
                     return;
