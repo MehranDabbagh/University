@@ -3,7 +3,6 @@ package D.Repository.Base;
 
 
 
-import D.MyConnection.PostgresConnection;
 import D.MyConnection.SessionFactorySingleton;
 import org.hibernate.SessionFactory;
 
