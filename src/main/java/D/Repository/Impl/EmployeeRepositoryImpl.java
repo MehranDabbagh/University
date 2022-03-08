@@ -16,8 +16,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class EmployeeRepositoryImpl extends GenericRepositoryImpl<Employee, Integer> {
-
+public class EmployeeRepositoryImpl extends GenericRepositoryImpl<Employee, Integer> implements EmployeeRepository {
+    @Override
     public List<Employee> findAll() {
         Session session = sessionFactory.openSession();
         Query q = session.createQuery("from Employee ");
@@ -26,7 +26,7 @@ public class EmployeeRepositoryImpl extends GenericRepositoryImpl<Employee, Inte
         return employees;
     }
 
-
+    @Override
     public Employee findById(Integer id) {
         try (var session = sessionFactory.openSession()) {
             return session.find(Employee.class, id);

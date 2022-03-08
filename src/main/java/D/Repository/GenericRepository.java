@@ -1,4 +1,4 @@
-package ir.maktab.hibernate;
+package D.Repository;
 
 import javax.persistence.Id;
 import java.util.List;

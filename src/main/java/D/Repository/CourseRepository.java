@@ -5,4 +5,4 @@ import D.Repository.Base.BaseRepository;
 import D.Repository.Impl.CourseRepositoryImpl;
 import D.Repository.Impl.GenericRepositoryImpl;
 
-public interface CourseRepository {}
+public interface CourseRepository extends BaseRepository<Course,Integer> {}

@@ -17,8 +17,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class StudentRepositoryImpl extends GenericRepositoryImpl<Student,Integer> {
-
+public class StudentRepositoryImpl extends GenericRepositoryImpl<Student,Integer> implements StudentRepository{
+    @Override
     public List<Student> findAll() {
         Session session = sessionFactory.openSession();
         Query q = session.createQuery("from Student ");
@@ -27,7 +27,7 @@ public class StudentRepositoryImpl extends GenericRepositoryImpl<Student,Integer
         return students;
     }
 
-
+    @Override
     public Student findById(Integer id) {
         try (var session = sessionFactory.openSession()) {
             return session.find(Student.class, id);
