@@ -20,6 +20,6 @@ public class Prof extends Person {
     private String type;
 @OneToMany
 @Fetch(FetchMode.JOIN)
-private Set<Course> courseList;
+private Set<Course> course;
 
 }

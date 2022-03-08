@@ -651,7 +651,7 @@ public class Main {
                 course.setTerm(term);
                 course.setUnit(unit);
                 int id = courseService.create(course);
-                prof.getCourseList().add(course);
+                prof.getCourse().add(course);
                 profService.Update(prof);
                 if (id > 0) {
                     System.out.println("done!");
