@@ -861,7 +861,7 @@ public class Main {
                 }
             }
             if (Objects.equals(prof.getType(), "heyatelmi")) {
-                int payment=5000 + (counter * 1000);
+                int payment = 5000 + (counter * 1000);
                 System.out.println("your salary is :" + payment);
             } else {
                 System.out.println("your salary is :" + (counter * 1000));
