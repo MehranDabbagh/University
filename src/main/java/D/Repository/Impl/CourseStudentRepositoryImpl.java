@@ -15,7 +15,6 @@ public class CourseStudentRepositoryImpl extends GenericRepositoryImpl<CourseStu
         Session session = sessionFactory.openSession();
         Query q = session.createQuery("from CourseStudent ");
         List<CourseStudent> courseStudents = (List<CourseStudent>) q.getResultList();
-
         return courseStudents;
     }
 
