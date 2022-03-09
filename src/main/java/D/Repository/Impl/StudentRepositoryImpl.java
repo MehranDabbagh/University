@@ -18,13 +18,12 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class StudentRepositoryImpl extends GenericRepositoryImpl<Student,Integer> implements StudentRepository{
+
     @Override
     public List<Student> findAll() {
         Session session = sessionFactory.openSession();
-        Query q = session.createQuery("from Student ");
-        List<Student> students = (List<Student>) q.getResultList();
-
-        return students;
+        Query q = session.createQuery("from BaseEntity ",Student.class);
+        return q.getResultList();
     }
 
     @Override

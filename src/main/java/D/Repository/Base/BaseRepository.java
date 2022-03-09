@@ -10,7 +10,7 @@ import java.sql.Connection;
 import java.util.List;
 
 public interface BaseRepository<T,I> {
-   List<T> findAll();
+    List<T> findAll();
     T findById(I id);
 
 }

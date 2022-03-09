@@ -1,6 +1,7 @@
 package D.Repository.Impl;
 
 import D.Entities.Course;
+import D.Entities.CourseStudent;
 import D.Entities.Employee;
 import D.Repository.EmployeeRepository;
 import lombok.var;
@@ -20,10 +21,8 @@ public class EmployeeRepositoryImpl extends GenericRepositoryImpl<Employee, Inte
     @Override
     public List<Employee> findAll() {
         Session session = sessionFactory.openSession();
-        Query q = session.createQuery("from Employee ");
-        List<Employee> employees = (List<Employee>) q.getResultList();
-
-        return employees;
+        Query q = session.createQuery("from Employee ",Employee.class);
+        return q.getResultList();
     }
 
     @Override
@@ -32,4 +31,5 @@ public class EmployeeRepositoryImpl extends GenericRepositoryImpl<Employee, Inte
             return session.find(Employee.class, id);
         }
     }
+
 }

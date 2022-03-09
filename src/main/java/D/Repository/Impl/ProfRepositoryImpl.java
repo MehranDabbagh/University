@@ -1,6 +1,7 @@
 package D.Repository.Impl;
 
 import D.Entities.Course;
+import D.Entities.CourseStudent;
 import D.Entities.Employee;
 import D.Entities.Prof;
 import D.Repository.ProfRepository;
@@ -17,13 +18,12 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class ProfRepositoryImpl extends GenericRepositoryImpl<Prof,Integer> implements ProfRepository{
+
     @Override
     public List<Prof> findAll() {
         Session session = sessionFactory.openSession();
-        Query q = session.createQuery("from Prof ");
-        List<Prof> profs = (List<Prof>) q.getResultList();
-
-        return profs;
+        Query q = session.createQuery("from BaseEntity ",Prof.class);
+        return q.getResultList();
     }
 
     @Override
@@ -32,5 +32,4 @@ public class ProfRepositoryImpl extends GenericRepositoryImpl<Prof,Integer> impl
             return session.find(Prof.class, id);
         }
     }
-
 }

@@ -1,13 +1,19 @@
 package D.Repository.Impl;
 
+import D.Entities.Course;
 import D.MyConnection.SessionFactorySingleton;
 import D.Repository.GenericRepository;
 import lombok.var;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class GenericRepositoryImpl<T, ID> implements GenericRepository<T, ID> {
 
     protected SessionFactory sessionFactory = SessionFactorySingleton.getInstance();
+
 
     @Override
     public T save(T t) {

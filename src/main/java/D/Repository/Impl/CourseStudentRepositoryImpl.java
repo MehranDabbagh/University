@@ -1,5 +1,6 @@
 package D.Repository.Impl;
 
+import D.Entities.Course;
 import D.Entities.CourseStudent;
 import D.Entities.Employee;
 import D.Repository.CourseStudentRepository;
@@ -13,9 +14,8 @@ public class CourseStudentRepositoryImpl extends GenericRepositoryImpl<CourseStu
     @Override
     public List<CourseStudent> findAll() {
         Session session = sessionFactory.openSession();
-        Query q = session.createQuery("from CourseStudent ");
-        List<CourseStudent> courseStudents = (List<CourseStudent>) q.getResultList();
-        return courseStudents;
+        Query q = session.createQuery("from BaseEntity ",CourseStudent.class);
+        return q.getResultList();
     }
 
     @Override
@@ -24,4 +24,5 @@ public class CourseStudentRepositoryImpl extends GenericRepositoryImpl<CourseStu
             return session.find(CourseStudent.class, id);
         }
     }
+
 }
