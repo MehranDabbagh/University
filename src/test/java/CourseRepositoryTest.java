@@ -20,11 +20,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class CourseRepositoryTest {
-    private CourseRepositoryImpl courseRepository= new CourseRepositoryImpl();
-    private ProfRepositoryImpl profRepository= new ProfRepositoryImpl();
+    private CourseRepositoryImpl courseRepository= new CourseRepositoryImpl();;
     @BeforeAll
     public static void setup() {
-        SessionFactory sessionFactory= SessionFactorySingleton.getInstance();
 
     }
     @BeforeEach
@@ -33,13 +31,6 @@ public class CourseRepositoryTest {
     }
     @AfterEach
     public void cleanUp()  {
-        List<Prof> profs=profRepository.findAll();
-        if(profs!=null) {
-            for (Prof prof : profs
-            ) {
-                profRepository.delete(prof);
-            }
-        }
         List<Course> courseList=courseRepository.findAll();
         if(courseList!=null) {
             for (Course course : courseList
