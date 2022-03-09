@@ -22,7 +22,7 @@ public class StudentRepositoryImpl extends GenericRepositoryImpl<Student,Integer
     @Override
     public List<Student> findAll() {
         Session session = sessionFactory.openSession();
-        Query q = session.createQuery("from BaseEntity ",Student.class);
+        Query q = session.createQuery("from Student ",Student.class);
         return q.getResultList();
     }
 

@@ -22,7 +22,7 @@ public class ProfRepositoryImpl extends GenericRepositoryImpl<Prof,Integer> impl
     @Override
     public List<Prof> findAll() {
         Session session = sessionFactory.openSession();
-        Query q = session.createQuery("from BaseEntity ",Prof.class);
+        Query q = session.createQuery("from Prof ",Prof.class);
         return q.getResultList();
     }
 

@@ -19,7 +19,7 @@ public class CourseRepositoryImpl extends GenericRepositoryImpl<Course, Integer>
     @Override
     public List<Course> findAll() {
         Session session = sessionFactory.openSession();
-        Query q = session.createQuery("from BaseEntity ",Course.class);
+        Query q = session.createQuery("from Course ",Course.class);
         return q.getResultList();
     }
 
